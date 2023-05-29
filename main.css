@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   background-color: #ffa6a6;
   font-family: Helvetica, Arial, sans-serif;
@@ -7,6 +8,23 @@ body, html {
 body {
   margin: 0;
   overflow-y: scroll;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 99;
+  border-bottom: 2px solid black;
+}
+
+#title {
+  font-size: 2rem;
+  margin-left: 20px;
 }
 
 #canvas-container {
@@ -22,7 +40,8 @@ body {
   width: 100%;
 }
 
-#main {
+main {
+  margin-top: 10vh;
   overflow-y: scroll;
   height: 100%;
 }
@@ -44,8 +63,7 @@ body {
   margin-left: 20px;
 }
 
-h1, h2 {
-  text-align: center;
+h2 {
   margin-top: 20px;
   font-size: 1.5rem;
 }
@@ -76,8 +94,6 @@ li a {
 }
 
 .image-container {
-
-
   margin-bottom: 20px;
 }
 
@@ -97,7 +113,8 @@ li a {
     flex-direction: column;
   }
 
-  #image-column, #text-column {
+  #image-column,
+  #text-column {
     flex-basis: 100%;
     margin-left: 0;
   }
