@@ -119,9 +119,30 @@ function drawOnCanvas() {
   resizeCanvas();
 }
 
+// TOGGLE MENU FUNCTION
+function toggleMenu() {
+  const menuButton = document.getElementById('menu-button');
+  const menu = document.getElementById('menu');
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = menu.classList.contains('open');
+    if (isOpen) {
+      menuButton.classList.remove('open');
+      menuButton.ariaLabel = 'Close menu';
+      menu.classList.remove('open');
+    } else {
+      menuButton.classList.add('open');
+      menuButton.ariaLabel = 'Open menu';
+
+      menu.classList.add('open');
+    }
+  });
+}
+
 // INITIAL FUNCTION CALLS
 // Run function when the page loads
 window.addEventListener('DOMContentLoaded', (event) => {
   randomImage();
   drawOnCanvas();
+  toggleMenu();
 });
