@@ -2,11 +2,11 @@
 
 ## To do list
 
-- Turn cursor into a pencip
+- Turn cursor into a pencil
 - Open/close menu logic
 - Style participants list
 - Footer
-  - Add
+  - Add "click/touch to draw"
 
 ## Enhancements
 

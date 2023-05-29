@@ -7,13 +7,101 @@
       property="og:description"
       content="Network for Analogue and Artistic Drawing in Higher Education, in the Nordic and Baltic Region (and elsewhere)."
     />
-    <title>✎</title>
+    <title>NDS</title>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <header>
-      <h1 id="title">THE NORTHERN DRAWING SCHOOL</h1>
-      <nav><button id="participants-toggle">Participants</button></nav>
+      <section id="header-top" class="header-section">
+        <h1 id="title" class="heading">The Northern Drawing School</h1>
+        <nav>
+          <button
+            id="participants-toggle"
+            aria-label="Show participants"
+            class="header-button heading"
+          >
+            Participants
+          </button>
+        </nav>
+      </section>
+      <menu>
+        <section id="header-participants" class="header-section">
+          <ul>
+            <h2 class="text-large heading">Schools</h2>
+            <ul id="participants">
+              <li>
+                <a target="_blank" href="https://www.konstfack.se/en/"
+                  >Konstfack University and Arts and Crafts, Stockholm,
+                  Sweden</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.rietveldacademie.nl/"
+                  >Academie Gerrit Rietveld, Amsterdam, The Netherlands</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.lma.lv/"
+                  >The Art Academy of Latvia, Riga, Latvia</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.artun.ee/"
+                  >The Estonian Academy of Art, Tallinn, Estonia</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.khio.no/"
+                  >KHIO, Oslo, Norway</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.hfk-bremen.de/"
+                  >HfK Bremen, Bremen, Germany</a
+                >
+              </li>
+            </ul>
+          </ul>
+        </section>
+        <section id="header-participants" class="header-section">
+          <ul>
+            <h2 class="text-large heading">Students</h2>
+            <ul id="participants">
+              <li>
+                <a target="_blank" href="https://www.konstfack.se/en/"
+                  >Konstfack University and Arts and Crafts, Stockholm,
+                  Sweden</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.rietveldacademie.nl/"
+                  >Academie Gerrit Rietveld, Amsterdam, The Netherlands</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.lma.lv/"
+                  >The Art Academy of Latvia, Riga, Latvia</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.artun.ee/"
+                  >The Estonian Academy of Art, Tallinn, Estonia</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.khio.no/"
+                  >KHIO, Oslo, Norway</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="https://www.hfk-bremen.de/"
+                  >HfK Bremen, Bremen, Germany</a
+                >
+              </li>
+            </ul>
+          </ul>
+        </section>
+      </menu>
     </header>
     <div id="canvas-container">
       <canvas id="canvas"></canvas>
@@ -27,13 +115,13 @@
           </div>
         </section>
         <section id="text-column">
-          <div id="description">
-            <p>
+          <div id="description-container">
+            <p id="description-intro">
               The Northern Drawing School (NDS) – Network for Analogue and
               Artistic Drawing in Higher Education, in the Nordic and Baltic
               Region (and elsewhere)
             </p>
-            <p>
+            <p id="description-body">
               From the Renaissance until the end of the 20th century, drawing
               was the foundation of all artistic education in the Western World.
               The word design comes from Latin and means to draw. Contrary to
@@ -49,39 +137,6 @@
               change its outcome.
             </p>
           </div>
-          <h2>PARTICIPANTS</h2>
-          <ul id="participants">
-            <li>
-              <a target="_blank" href="https://www.konstfack.se/en/"
-                >Konstfack University and Arts and Crafts, Stockholm, Sweden</a
-              >
-            </li>
-            <li>
-              <a target="_blank" href="https://www.rietveldacademie.nl/"
-                >Academie Gerrit Rietveld, Amsterdam, The Netherlands</a
-              >
-            </li>
-            <li>
-              <a target="_blank" href="https://www.lma.lv/"
-                >The Art Academy of Latvia, Riga, Latvia</a
-              >
-            </li>
-            <li>
-              <a target="_blank" href="https://www.artun.ee/"
-                >The Estonian Academy of Art, Tallinn, Estonia</a
-              >
-            </li>
-            <li>
-              <a target="_blank" href="https://www.khio.no/"
-                >KHIO, Oslo, Norway</a
-              >
-            </li>
-            <li>
-              <a target="_blank" href="https://www.hfk-bremen.de/"
-                >HfK Bremen, Bremen, Germany</a
-              >
-            </li>
-          </ul>
         </section>
       </article>
     </main>

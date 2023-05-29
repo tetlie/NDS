@@ -4,11 +4,6 @@
 // 'description' is inserted below the image
 const images = [
   {
-    source: 'images/Untitled(Scribbles).png',
-    alt: "Sorry sir, we don't serve any scribbles",
-    description: '1. Drawing by ...',
-  },
-  {
     source: 'http://www.sany.dk/images/big/LE_MO4.jpg',
     alt: 'Less IS more',
     description: '2. Drawing by ...',

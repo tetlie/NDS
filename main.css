@@ -1,13 +1,42 @@
+/* #header top should be fixed an have the correct z-index */
+/* remove fixed props from old header selector  */
+/* menu should have right -100% initially and then be moved to 0 */
+/* menu should take up 50vw, 100vw on mobile */
+/* menu should be scrollable */
+
+/* reorder main and flex it */
+/* set width of each section to 50%, 100% on mobile */
+/* check that it aligns with the menu */
+/* Center vertically */
+
+/* Clear default styling */
+* {
+  box-sizing: border-box;
+  font-size: inherit !important;
+  margin: 0;
+  padding: 0;
+  font-style: inherit;
+  border: none;
+  background-color: transparent;
+}
+
 body,
 html {
   margin: 0;
   background-color: #ffa6a6;
   font-family: Helvetica, Arial, sans-serif;
+  /* font-size: 62.5%; */
 }
 
 body {
   margin: 0;
   overflow-y: scroll;
+  font-size: 1.25rem !important;
+  line-height: 1.2em !important;
+}
+
+.heading {
+  font-style: bold !important;
 }
 
 header {
@@ -15,16 +44,40 @@ header {
   width: 100vw;
   top: 0;
   left: 0;
+  z-index: 99;
+}
+
+#participants {
+  margin-top: 0.75rem;
+}
+
+.header-section {
+  background-color: #ffa6a6;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  z-index: 99;
+  padding: 0.75rem 0.625rem;
   border-bottom: 2px solid black;
 }
 
-#title {
-  font-size: 2rem;
-  margin-left: 20px;
+#header-participants {
+  width: 50vw;
+  height: 100%;
+}
+
+#header-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+li {
+  list-style-position: inside;
+}
+
+button {
+  cursor: pointer;
 }
 
 #canvas-container {
@@ -36,6 +89,7 @@ header {
 }
 
 #canvas {
+  cursor: url('./cursor.png'), default;
   height: 100%;
   width: 100%;
 }
@@ -63,34 +117,23 @@ main {
   margin-left: 20px;
 }
 
-h2 {
-  margin-top: 20px;
-  font-size: 1.5rem;
-}
-
-#description {
-  font-size: 1.5rem;
-}
-
-ul {
-  margin-top: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: black;
+a {
   transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-li:hover {
-  color: red;
-}
-
-li a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+a[target='_blank']::after {
+  margin-left: 0.2em;
+  font-size: 0.8em;
+  content: '\2197';
+  font-style: bold !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+
+  color: red;
 }
 
 .image-container {
@@ -112,7 +155,6 @@ li a {
   #content {
     flex-direction: column;
   }
-
   #image-column,
   #text-column {
     flex-basis: 100%;
