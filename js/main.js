@@ -41,7 +41,8 @@ function drawOnCanvas() {
   // Draw a circle at the current mouse position.
   function drawCircle(x, y) {
     context.beginPath();
-    context.arc(x, y, 20, 0, 2 * Math.PI);
+    // stroke width
+    context.arc(x, y, 10, 0, 2 * Math.PI);
     context.fill();
   }
 
@@ -117,7 +118,7 @@ function drawOnCanvas() {
   });
 
   // resize canvas when window is resized
-  window.addEventListener('resize', resizeCanvas);
+  // window.addEventListener('resize', resizeCanvas);
 
   // Initial canvas resize
   resizeCanvas();
