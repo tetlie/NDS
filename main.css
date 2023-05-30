@@ -16,6 +16,9 @@
   margin: 0;
   padding: 0;
   font-style: inherit;
+  font-style: normal !important;
+  font-weight: 400 !important;
+
   border: none;
   background-color: transparent;
   -webkit-font-smoothing: antialiased;
@@ -37,11 +40,9 @@ body {
   line-height: 1.25em;
 }
 
-.heading {
-  font-style: bold !important;
-}
-
 header {
+  background-color: #ffa6a6;
+
   position: fixed;
   width: 100vw;
   top: 0;
@@ -49,13 +50,8 @@ header {
   z-index: 999;
 }
 
-#participants {
-  margin-top: 0.75rem;
-}
-
 #header-top {
   height: 7.5vh;
-  background-color: #ffa6a6;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -65,14 +61,15 @@ header {
 }
 
 menu {
+  background-color: #ffa6a6;
   padding-top: 7.5vh;
   position: fixed;
   right: 0;
   border-left: 2px solid black;
   border-bottom: 2px solid black;
-  background-color: #ffa6a6;
   width: 50vw;
-  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
   transition: top 0.3s ease;
 }
 
@@ -96,7 +93,7 @@ menu:not(.open) {
   top: -100%;
 }
 
-menu > section {
+.header-section {
   padding: 0.625rem;
   border-bottom: 2px solid black;
 }
@@ -164,7 +161,11 @@ main {
 }
 
 #intro-column {
+  /* background-color: #f6c7c7; */
   padding-bottom: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #description-intro {
@@ -176,8 +177,9 @@ main {
   font-size: 1.5rem !important;
   line-height: 1.25em;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
+  /* background-color: #ab5a5a; */
 }
 
 /* center image in image column */
@@ -191,9 +193,19 @@ main {
   max-width: 100%;
 }
 
+#description-container {
+  padding-left: 50px;
+}
+
 #image {
   max-width: 100%;
   height: auto;
+}
+
+#image-description {
+  font-size: 1rem !important;
+  font-style: italic;
+  line-height: 1.25em;
 }
 
 #canvas-container {
@@ -212,6 +224,10 @@ main {
 
 /* media query for smaller screens */
 @media (max-width: 768px) {
+  menu {
+    width: 100vw;
+    border-left: none;
+  }
   #content > #intro-column {
     flex-grow: 1;
     border-bottom: 2px solid black;
