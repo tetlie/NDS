@@ -36,7 +36,6 @@ function drawOnCanvas() {
   // Draw a circle at the current mouse position.
   function drawCircle(x, y) {
     context.beginPath();
-    // stroke width
     context.arc(x, y, 10, 0, 2 * Math.PI);
     context.fill();
   }

@@ -2,11 +2,8 @@
 
 ## To do list
 
-- Turn cursor into a pencil
-- Open/close menu logic
-- Style participants list
-- Footer
-  - Add "click/touch to draw"
+- Add container with max width
+- Flex description text to top
 
 ## Enhancements
 
