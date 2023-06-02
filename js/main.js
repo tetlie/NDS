@@ -132,8 +132,30 @@ function toggleMenu() {
     } else {
       menuButton.classList.add('open');
       menuButton.ariaLabel = 'Open menu';
-
       menu.classList.add('open');
+    }
+  });
+}
+
+function toggleCanvas() {
+  const canvas = document.getElementById('canvas-container');
+  const canvasButton = document.getElementById('canvas-button');
+  canvasButton;
+
+  canvasButton.addEventListener('click', () => {
+    const isOpen = canvas.classList.contains('open');
+    if (isOpen) {
+      console.log('close');
+      canvas.classList.remove('open');
+      canvasButton.ariaLabel = 'Open canvas';
+      canvasButton.innerText = 'Open canvas';
+
+      canvas.classList.remove('open');
+    } else {
+      console.log('open');
+      canvas.classList.add('open');
+      canvasButton.ariaLabel = 'Close canvas';
+      canvasButton.innerText = 'Close canvas';
     }
   });
 }
@@ -144,4 +166,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
   randomImage();
   drawOnCanvas();
   toggleMenu();
+  toggleCanvas();
 });

@@ -11,11 +11,14 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div id="canvas-container">
+    <button id="canvas-button" aria-label="Exit drawing canvas">
+      Close canvas
+    </button>
+    <div id="canvas-container" class="open">
       <canvas id="canvas"></canvas>
     </div>
-    <header>
-      <section id="header-top" class="header-section">
+    <header id="header-top" class="">
+      <section id="header-inner" class="max-width">
         <h1 id="title">The Northern Drawing School</h1>
         <nav>
           <button
@@ -100,9 +103,8 @@
         </section>
       </nav>
     </menu>
-
-    <main>
-      <article id="content">
+    <main class="">
+      <article id="content" class="max-width">
         <section id="intro-column">
           <p id="description-intro">
             The Northern Drawing School (NDS) &mdash; Network for Analogue and
