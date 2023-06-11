@@ -73,6 +73,11 @@ header {
   color: #ffa6a6;
 }
 
+button {
+  color: black;
+}
+
+
 #header-top {
   height: 7.5vh;
   padding: 0.625rem;
@@ -119,7 +124,7 @@ menu.open {
 }
 
 menu:not(.open) {
-  top: -100%;
+  top: -150%;
 }
 
 .header-section {
@@ -233,6 +238,7 @@ main {
   top: 0;
 }
 
+
 #canvas-container:not(.open) {
   top: -100%;
 }
@@ -256,6 +262,7 @@ main {
 
 #description-container {
   padding-right: 0.625rem;
+
 }
 
 /* media query for tablets */
@@ -303,5 +310,7 @@ main {
 
   #description-container {
     padding-right: 0;
+    padding-bottom: 3rem;
+
   }
 }
