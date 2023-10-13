@@ -1,14 +1,3 @@
-/* #header top should be fixed an have the correct z-index */
-/* remove fixed props from old header selector  */
-/* menu should have right -100% initially and then be moved to 0 */
-/* menu should take up 50vw, 100vw on mobile */
-/* menu should be scrollable */
-
-/* reorder main and flex it */
-/* set width of each section to 50%, 100% on mobile */
-/* check that it aligns with the menu */
-/* Center vertically */
-
 /* Clear default styling */
 * {
   box-sizing: border-box;
@@ -76,7 +65,6 @@ header {
 button {
   color: black;
 }
-
 
 #header-top {
   height: 7.5vh;
@@ -146,25 +134,24 @@ a {
   text-decoration: none !important;
 }
 
-a[target='_blank']::after {
+/* a[target='_blank']::after {
   margin-left: 0.2em;
   font-size: 0.8em;
   content: '\2197';
   font-style: bold !important;
-}
+} */
 
 a:hover {
   text-decoration: underline !important;
   color: red;
 }
 
-body {
+/* body {
   min-height: 100vh;
-}
+} */
 
 main {
   display: flex;
-  min-height: 100vh;
   border-top: 2px solid black;
   overflow-y: scroll;
   height: 100%;
@@ -172,60 +159,36 @@ main {
 }
 
 #content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-#content > #intro-column {
-  flex-grow: 1;
-}
-
-#content > #text-column,
-#content > #image-column {
-  width: 50%;
-  flex-grow: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 64px 32px;
+  align-items: start;
+  padding-bottom: 64px;
 }
 
 #intro-column {
-  padding-bottom: 0.625rem;
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  padding-top: 64px;
+  grid-column: 1 / span 12;
+  grid-row-start: 1;
 }
 
-#description-intro {
+#text-column {
+  grid-column: 1 / span 6;
+  grid-row-start: 2;
+}
+
+#image-column {
+  grid-column: 8 / span 5;
+  grid-row-start: 2;
+}
+
+#intro-column {
   font-size: 2rem !important;
   line-height: 1.15em;
 }
 
-#text-column {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-}
-
-/* center image in image column */
-#image-column {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-}
-
-.image-container {
-  max-width: 100%;
-}
-
-/* #description-container {
-  padding-left: 50px;
-} */
-
 #image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
 }
 
 #image-description {
@@ -237,7 +200,6 @@ main {
 #canvas-container.open {
   top: 0;
 }
-
 
 #canvas-container:not(.open) {
   top: -100%;
@@ -256,14 +218,13 @@ main {
   width: 100%;
 }
 
-#content > section {
+/* #content > section {
   padding: 0.625rem 0;
-}
+} */
 
-#description-container {
+/* #description-container {
   padding-right: 0.625rem;
-
-}
+} */
 
 /* media query for tablets */
 @media (max-width: 1024px) {
@@ -272,6 +233,22 @@ main {
   }
   #description-intro {
     font-size: 1.5rem !important;
+    line-height: 1.2em !important;
+  }
+
+  #intro-column {
+    grid-column: 1 / span 12;
+    grid-row-start: 1;
+  }
+
+  #text-column {
+    grid-column: 1 / span 12;
+    grid-row-start: 3;
+  }
+
+  #image-column {
+    grid-column: 2 / span 10;
+    grid-row-start: 2;
   }
 }
 
@@ -280,37 +257,41 @@ main {
   body {
     font-size: 1.15rem !important;
   }
+
   #description-intro {
     font-size: 1.5rem !important;
+    line-height: 1.2em !important;
   }
   menu {
     width: 100vw;
     border-left: none;
   }
-  #content > #intro-column {
-    flex-grow: 1;
+
+  #content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px 16px;
+    padding-bottom: 32px;
   }
 
   #intro-column {
-    order: 1;
+    padding-top: 32px;
+    grid-column: 1 / span 12;
+    grid-row-start: 1;
+  }
+
+  #text-column {
+    grid-column: 1 / span 12;
+    grid-row-start: 3;
   }
 
   #image-column {
-    order: 2;
-  }
-  #text-column {
-    order: 3;
+    grid-column: 1 / span 12;
+    grid-row-start: 2;
   }
 
-  #content > #text-column,
-  #content > #image-column {
-    width: 100%;
-    flex-grow: 0;
-  }
-
-  #description-container {
+  /* #description-container {
     padding-right: 0;
     padding-bottom: 3rem;
-
-  }
+  } */
 }
