@@ -1,20 +1,22 @@
-// IMAGES ARRAY
-// 'source' should be the path to the image, either internal or external
-// 'alt' should be a short description of the image or empty
-// 'description' is inserted below the image
-const images = [
+// IMAGES ARRAY (see the readme for more info)
+const IMAGES = [
   {
-    source: 'http://www.sany.dk/images/big/LE_MO4.jpg',
-    alt: 'Less IS more',
-    description: '2. Drawing by ...',
+    source: '../images/IMG_7424.jpeg',
+    alt: '',
+    description: '',
+  },
+  {
+    source: '../images/IMG_8777.JPG',
+    alt: '',
+    description: '',
   },
 ];
 
 // RANDOM IMAGE FUNCITON
 // Function to randomly select an image and insert it into the DOM
 function randomImage() {
-  const randomIndex = Math.floor(Math.random() * images.length);
-  const selectedImage = images[randomIndex];
+  const randomIndex = Math.floor(Math.random() * IMAGES.length);
+  const selectedImage = IMAGES[randomIndex];
 
   const imageElement = document.getElementById('image');
   imageElement.src = selectedImage.source;
