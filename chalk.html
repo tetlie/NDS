@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chalkboard</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #chalkboard {
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+        cursor: none;
+      }
+
+      #exportButton {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+        padding: 10px;
+        background-color: white;
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="exportButton">Export as PNG</button>
+    <div id="chalkboard"></div>
+
+    <script>
+      const chalkboard = document.getElementById('chalkboard');
+      let isDrawing = false;
+
+      chalkboard.addEventListener('mousedown', () => {
+        isDrawing = true;
+      });
+
+      chalkboard.addEventListener('mouseup', () => {
+        isDrawing = false;
+      });
+
+      chalkboard.addEventListener('mousemove', (e) => {
+        if (isDrawing) {
+          const chalk = document.createElement('div');
+          chalk.className = 'chalk';
+          const randomSize = Math.floor(Math.random() * 21) + 10; // Random size between 10 and 30 pixels
+          chalk.style.width = `${randomSize}px`;
+          chalk.style.height = `${randomSize}px`;
+          chalk.style.left = `${e.clientX - randomSize / 2}px`;
+          chalk.style.top = `${e.clientY - randomSize / 2}px`;
+          chalk.style.backgroundColor = 'white';
+          chalk.style.position = 'absolute';
+          chalkboard.appendChild(chalk);
+        }
+      });
+
+      chalkboard.addEventListener('contextmenu', (e) => {
+        e.preventDefault(); // Prevent the right-click context menu
+      });
+
+      chalkboard.addEventListener('mousedown', () => {
+        chalkboard.style.cursor = 'none';
+      });
+
+      chalkboard.addEventListener('mouseup', () => {
+        chalkboard.style.cursor = 'auto';
+      });
+
+      const exportButton = document.getElementById('exportButton');
+      exportButton.addEventListener('click', () => {
+        html2canvas(chalkboard).then(function (canvas) {
+          const imgData = canvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.href = imgData;
+          link.download = 'chalkboard.png';
+          link.click();
+        });
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+/* #header top should be fixed an have the correct z-index */
+/* remove fixed props from old header selector  */
+/* menu should have right -100% initially and then be moved to 0 */
+/* menu should take up 50vw, 100vw on mobile */
+/* menu should be scrollable */
+
+/* reorder main and flex it */
+/* set width of each section to 50%, 100% on mobile */
+/* check that it aligns with the menu */
+/* Center vertically */
+
+/* Clear default styling */
+* {
+  box-sizing: border-box;
+  font-size: inherit !important;
+  margin: 0;
+  padding: 0;
+  font-style: inherit;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  border: none;
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+  /* font-size: 62.5%; */
+}
+
+.imgCenter {
+width:70vw;
+  left: 50%;
+    transform: translate(-50%, 0);
+position: fixed;
+}
+
+
+.max-width {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+  font-size: 1.5rem !important;
+  line-height: 1.25em;
+}
+
+
+
+/* media query for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.15rem !important;
+  }
+  #description-intro {
+    font-size: 1.5rem !important;
+  }
+  menu {
+    width: 100vw;
+    border-left: none;
+  }
+  #content > #intro-column {
+    flex-grow: 1;
+  }
+
+  #intro-column {
+    order: 1;
+  }
+
+  #image-column {
+    order: 2;
+  }
+  #text-column {
+    order: 3;
+  }
+
+  #content > #text-column,
+  #content > #image-column {
+    width: 100%;
+    flex-grow: 0;
+  }
+
+  #description-container {
+    padding-right: 0;
+  }
+}
+
+
