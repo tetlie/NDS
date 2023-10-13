@@ -1,12 +1,12 @@
 // IMAGES ARRAY (see the readme for more info)
 const IMAGES = [
   {
-    source: '../images/IMG_7424.jpeg',
+    source: './images/IMG_7424.jpeg',
     alt: '',
     description: '',
   },
   {
-    source: '../images/IMG_8777.JPG',
+    source: './images/IMG_8777.JPG',
     alt: '',
     description: '',
   },
